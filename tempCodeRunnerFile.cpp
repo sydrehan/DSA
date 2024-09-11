@@ -1,16 +1,18 @@
 #include<iostream>
+#include<algorithm>
 #include<string>
 using namespace std;
-int main(){
-        int ld;
-        int count=0;
-        int n=nums.size();
-        while(int n>0){
-            ld=nums%10;
-            count++;
-            n=n/10;
-            
+int main()
+{
+    int n1,n2;
+    cout<<"enter 2 numbers: ";
+    cin>>n1>>n2;
+    int gcd=1;
+    for(int i=1;i<min(n1,n2);i++){
+        if(n1%i==0 && n2%i==0){
+            gcd=i;
+            cout<<i<<endl;
         }
-        cout<<n;
-        return 0;
+    }
+ return 0;
 }
