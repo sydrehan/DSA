@@ -1,19 +1,37 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <unordered_map>
+#include <string>
 using namespace std;
-int cnt=1;
-void print(int n){
-    if(cnt>n)return;
-    cout<<cnt<<" ";
-    cnt++;
-    print(n);
+
+char firstNonRepeatingCharacter(const string &str) {
+    unordered_map<char, int> charCount;
+    
+    // Count occurrences of each character
+    for (char ch : str) {
+        charCount[ch]++;
+    }
+    
+    // Find the first character with count 1
+    for (char ch : str) {
+        if (charCount[ch] == 1) {
+            return ch;
+        }
+    }
+    
+    return '-1';
 }
-int main()
-{
-    int n;
-    cout<<"Enter a number: ";
-    cin>>n;
-    print(n);
-    cout<<endl;
+
+int main() {
+    string input;
+    cout << "Enter a string: ";
+    cin >> input;
+    
+    char result = firstNonRepeatingCharacter(input);
+    if (result != '-1') {
+        cout << "The first non-repeating character is: " << result << endl;
+    } else {
+        cout << "All characters are repeated." << endl;
+    }
+    
     return 0;
 }
