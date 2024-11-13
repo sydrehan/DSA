@@ -1,15 +1,18 @@
-#include<iostream>
-#include<string>
+#include <iostream>
 using namespace std;
-int count=1;
-void print(){
-    if(count==11) return;
-    cout<<count<<endl;
-    count++;
-    print();
+
+int factorial(int n) {
+    if (n <= 1) // Base case
+        return 1;
+    else
+        return n * factorial(n - 1); // Recursive case
 }
-int main()
-{
-    print();
- return 0;
+
+int main() {
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+    int fact = factorial(n);
+    cout << "Factorial of " << n << " is " << fact << endl;
+    return 0;
 }
