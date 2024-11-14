@@ -1,15 +1,14 @@
 #include<iostream>
 #include<string>
 using namespace std;
-int count=1;
-void func(int i,int n){
+void print(int i, int n){
     if(i<n) return;
     cout<<i<<endl;
-    func(i-1,n);
+    print(i-1,n);
 }
 int main()
 {
     int i=10;
-    func(i,1);
+    print(i,1);
  return 0;
 }
