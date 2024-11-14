@@ -3,7 +3,7 @@
 using namespace std;
 int count=1;
 void print(){
-    if(count==11) return;
+    if(count==8) return;
     cout<<count<<endl;
     count++;
     print();

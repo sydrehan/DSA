@@ -12,6 +12,4 @@ int main()
     int n = 10;
   func(1,n);
   return 0;
-    
- return 0;
 }
