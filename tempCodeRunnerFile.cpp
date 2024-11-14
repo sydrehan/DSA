@@ -1,17 +1,15 @@
 #include<iostream>
 #include<string>
 using namespace std;
-int factorial(int n){
-    if(n==0) return 1;
-    else
-    return n*factorial(n-1);
+int count=1;
+void print(){
+    if(count==8) return;
+    cout<<count<<endl;
+    count++;
+    print();
 }
 int main()
 {
-    int n;
-    cout<<"Enter a number: ";
-    cin>>n;
-    int fact=factorial(n);
-    cout<<"Factorial is : "<<fact;
+    print();
  return 0;
 }
