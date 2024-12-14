@@ -1,3 +1,5 @@
+// The Fibonacci series is a sequence of numbers in which each number is the sum of the two preceding ones. The sequence typically starts with 0 and 1
+
 #include <iostream>
 using namespace std;
 
