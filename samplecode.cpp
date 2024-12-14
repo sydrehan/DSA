@@ -1,17 +1,22 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 using namespace std;
-int main()
-{
+
+long long factorial(int n) {
+    if (n <= 1) return 1; // Base case: 0! = 1! = 1
+    return n * factorial(n - 1); // Recursive case
+}
+
+int main() {
     int n;
-    cout<<"enter a num: ";
-    cin>>n;
-    int count=0;
-    while(n>0){
-        int ld=n%10;
-        count=count+1;
-        n=n/10;
+    cout << "Enter a number: ";
+    cin >> n;
+
+    if (n < 0) {
+        cout << "Factorial is not defined for negative numbers." << endl;
+    } else {
+        long long fact = factorial(n);
+        cout << "Factorial is: " << fact << endl;
     }
-    cout<<count<<endl;
- return 0;
+    return 0;
 }
