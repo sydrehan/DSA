@@ -2,14 +2,14 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "build and run",
             "type": "shell",
-            "command": "/usr/bin/g++",  // Compiler path for Linux
+            "command": "/usr/bin/g++",  // Change this if using MinGW or different compiler
             "args": [
                 "-g",
-                "main.cpp",
+                "${file}",                    // Automatically compile the currently open file
                 "-o",
-                "bin/main"  // Specify the output directory (bin/) and output file name (main)
+                ".vscode/bin/${fileBasenameNoExtension}" // Save the .exe in .vscode/bin/ with the same name as the .cpp file
             ],
             "group": {
                 "kind": "build",
@@ -18,7 +18,18 @@
             "problemMatcher": [
                 "$gcc"
             ],
-            "detail": "Generated task to build the C++ program."
+            "detail": "Compile the currently open C++ file and place .exe in .vscode/bin/"
+        },
+        {
+            "label": "run program",
+            "type": "shell",
+            "command": "./.vscode/bin/${fileBasenameNoExtension}", // Run the compiled file from .vscode/bin/
+            "dependsOrder": "sequence",
+            "dependsOn": "build and run",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
         }
     ]
 }
