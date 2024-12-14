@@ -4,12 +4,12 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "/usr/bin/g++",
+            "command": "/usr/bin/g++",  // Compiler path for Linux
             "args": [
                 "-g",
                 "main.cpp",
                 "-o",
-                "main"
+                "bin/main"  // Specify the output directory (bin/) and output file name (main)
             ],
             "group": {
                 "kind": "build",
